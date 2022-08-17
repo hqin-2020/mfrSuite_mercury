@@ -17,19 +17,19 @@ elif (( $(echo "$sigma_V_norm == 0.0" |bc -l) )); then
     mkdir -p ./bash/$domain_folder
 fi
 
-for chiUnderline in 1.0
+for chiUnderline in 0.5
 do
-    for a_e in 0.15
+    for a_e in 0.14
     do
-        for a_h in 0.13 0.12 0.11 0.10 0.09 0.08 0.07 0.06 0.05
+        for a_h in 0.135
         do
-            for gamma_e in 1.0
+            for gamma_e in 0.5
             do
-                for gamma_h in 1.0
+                for gamma_h in 8.0
                 do
-                    for psi_e in 1.0
+                    for psi_e in 0.5 1.5
                     do
-                        for psi_h in 1.0
+                        for psi_h in 0.5 1.5
                         do
                             model_folder=chiUnderline_${chiUnderline}_a_e_${a_e}_a_h_${a_h}_gamma_e_${gamma_e}_gamma_h_${gamma_h}_psi_e_${psi_e}_psi_h_${psi_h}
                             mkdir -p ./job-outs/$domain_folder/$model_folder
@@ -50,7 +50,7 @@ do
 
 module load python/booth/3.8/3.8.5
 
-python3 /home/qhaomin/mfrSuite_mercury/SolvedModels/run_mfrSuite.py --chiUnderline ${chiUnderline} --a_e ${a_e} --a_h ${a_h} --gamma_e ${gamma_e} --gamma_h ${gamma_h} --psi_e ${psi_e} --psi_h ${psi_h} \
+srun python3 /home/qhaomin/mfrSuite_mercury/SolvedModels/run_mfrSuite.py --chiUnderline ${chiUnderline} --a_e ${a_e} --a_h ${a_h} --gamma_e ${gamma_e} --gamma_h ${gamma_h} --psi_e ${psi_e} --psi_h ${psi_h} \
                                                     --nV ${nV} --nVtilde ${nVtilde} --V_bar ${V_bar} --Vtilde_bar ${Vtilde_bar} --sigma_V_norm ${sigma_V_norm} --sigma_Vtilde_norm ${sigma_Vtilde_norm} \
 
 EOF

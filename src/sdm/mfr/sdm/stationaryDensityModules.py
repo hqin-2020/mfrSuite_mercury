@@ -24,7 +24,7 @@ from scipy.sparse import csc_matrix, identity
 from scipy.sparse.linalg import factorized
 from scipy.interpolate import RegularGridInterpolator
 import warnings
-from pyMKL import pardisoSolver
+# from pyMKL import pardisoSolver
 
 ######################################################
 ############## Stationary Density Module #############

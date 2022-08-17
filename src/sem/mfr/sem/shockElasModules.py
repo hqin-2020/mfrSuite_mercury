@@ -25,7 +25,7 @@ from scipy.sparse.linalg import factorized
 import math
 from scipy.interpolate import RegularGridInterpolator, interpn
 import copy
-from pyMKL import pardisoSolver
+# from pyMKL import pardisoSolver
 import warnings
 
 def getStateMatInfo(stateMat):

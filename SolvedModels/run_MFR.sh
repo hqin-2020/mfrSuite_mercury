@@ -45,7 +45,7 @@ do
 #SBATCH --error=./job-outs/$domain_folder/$model_folder/run.err
 #SBATCH --time=0-10:00:00
 #SBATCH --partition=standard
-#SBATCH --cpus-per-task=14
+#SBATCH --cpus-per-task=16
 #SBATCH --mem=64G
 
 module load python/booth/3.8/3.8.5

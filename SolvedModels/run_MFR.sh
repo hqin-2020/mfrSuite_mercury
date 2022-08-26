@@ -1,11 +1,11 @@
 #! /bin/bash
 
-nV=0
-nVtilde=30
+nV=30
+nVtilde=0
 V_bar=1.0
-Vtilde_bar=1.0
-sigma_V_norm=0
-sigma_Vtilde_norm=0.3
+Vtilde_bar=0.0
+sigma_V_norm=0.132
+sigma_Vtilde_norm=0.0
 
 if (( $(echo "$sigma_Vtilde_norm == 0.0" |bc -l) )); then
     domain_folder='WZV'
@@ -27,9 +27,9 @@ do
             do
                 for gamma_h in 8.0
                 do
-                    for psi_e in 0.5 1.5
+                    for psi_e in 1.0
                     do
-                        for psi_h in 0.5 1.5
+                        for psi_h in 1.0
                         do
                             model_folder=chiUnderline_${chiUnderline}_a_e_${a_e}_a_h_${a_h}_gamma_e_${gamma_e}_gamma_h_${gamma_h}_psi_e_${psi_e}_psi_h_${psi_h}
                             mkdir -p ./job-outs/$domain_folder/$model_folder
@@ -45,7 +45,7 @@ do
 #SBATCH --error=./job-outs/$domain_folder/$model_folder/run.err
 #SBATCH --time=0-10:00:00
 #SBATCH --partition=standard
-#SBATCH --cpus-per-task=32
+#SBATCH --cpus-per-task=14
 #SBATCH --mem=64G
 
 module load python/booth/3.8/3.8.5

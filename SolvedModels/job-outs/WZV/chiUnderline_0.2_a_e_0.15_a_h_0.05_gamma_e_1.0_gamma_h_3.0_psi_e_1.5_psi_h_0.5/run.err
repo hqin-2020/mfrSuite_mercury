@@ -1,0 +1,2 @@
+/apps/python/3.8/3.8.5/bin/python3: can't open file '/home/qhaomin/mfrSuite_mercury/SolvedModels/run_mfrSuite.py': [Errno 2] No such file or directory
+srun: error: mcn24: task 0: Exited with exit code 2
